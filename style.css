@@ -396,6 +396,100 @@ nav {
   opacity: 1;
   cursor: pointer;
 }
+.tour {
+  margin-bottom: 2rem;
+  background-image: url("assets/tour.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.tourContainer {
+  padding-bottom: 0;
+}
+
+.tourContainer h4 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: center;
+}
+
+.videoContainer {
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+  height: 300px;
+  overflow: hidden;
+  background-color: var(--text-light);
+  transform: translateY(2rem);
+  border: 1px solid var(--white);
+  border-radius: 10px;
+}
+
+
+.clientGrid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.clientCard {
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.clientCardHeader {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clientCardHeader span {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.clientCardHeader .ratings span {
+  font-size: 1.2rem;
+  color: goldenrod;
+}
+
+.clientCard p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.clientCardFooter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.clientCardFooter img {
+  max-width: 60px;
+  border-radius: 100%;
+}
+
+.clientCardFooter h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.clientCardFooter p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.clientCard:hover {
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+}
+
 
 
 @media (width < 1200px) {
