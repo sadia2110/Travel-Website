@@ -31,119 +31,228 @@
                 <form action="/">
                     <div class="inputGroup">
                         <label for="destination">Where do you want to go?</label>
-                        <input type="text" placeholder="Country, ZIP" />
+                        <input type="text" placeholder="Country, City" />
                     </div>
                     <div class="inputGroup">
                         <label for="checkIn">Check In</label>
-                        <input type="text" placeholder="Choose a date" />
+                        <input type="date" id="checkIn" />
                     </div>
                     <div class="inputGroup">
-                        <label for="CheckOut">Check Out</label>
-                        <input type="text" placeholder="Choose a date" />
+                        <label for="checkOut">Check Out</label>
+                        <input type="date" id="checkOut" />
                     </div>
                     <div class="inputGroup">
                         <label for="guests">Guests</label>
-                        <input type="text" placeholder="Number of guests" />
+                        <input type="number" id="guests" placeholder="Number of guests" min="1" />
                     </div>
                     <button class="btn">CHECK AVAILABILITY</button>
                 </form>
             </div>
         </div>
     </header>
+
+    <div class="filter-sort-container">
+        <label for="priceFilter">Filter by Price:</label>
+        <select id="priceFilter">
+            <option value="all">All</option>
+            <option value="low">Below $600</option>
+            <option value="mid">Between $600 - $900</option>
+            <option value="high">Above $900</option>
+        </select>
+
+        <label for="sortOptions">Sort by:</label>
+        <select id="sortOptions">
+            <option value="none">Default</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating-high">Rating: High to Low</option>
+        </select>
+        <button id="clearBtn">Clear Filters</button>
+    </div>
+
+    <!-- Trending Tours Section -->
     <section class="sectionContainer trendingContainer" id="trending">
         <div class="sectionHeader">
-            <h2 class="sectionTitle">Trending 2023</h2>
-            <div class="sectionNav">
-                <span><i class="ri-arrow-left-s-line"></i></span>
-                <span><i class="ri-arrow-right-s-line"></i></span>
+            <h2 class="sectionTitle">Trending 2025</h2>
+        </div>
+
+
+        <div class="trendingGridWrapper">
+            <div class="trendingGrid">
+
+                <div class="trendingCard">
+                    <img src="assets/trending-1.jpg" alt="trending" />
+                    <h1>Mountain Hiking Tour</h1>
+                    <p>Hiking Our | Stoke On Trent</p>
+                    <div class="trendingDetails">
+                        <div class="price">
+                            <p>From</p>
+                            <h3>$957.50</h3>
+                            <p>*Price varies</p>
+                        </div>
+                        <div class="trendingRatings">
+                            <div>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-half-fill"></i></span>
+                                <span><i class="ri-star-line"></i></span>
+                            </div>
+                            <p>4.8 (10)</p>
+                        </div>
+                    </div>
+                    <h5>
+                        <span><i class="ri-time-line"></i></span> 7 days
+                    </h5>
+                    <p>
+                        <span><i class="ri-check-line"></i></span> Free Cancellation
+                    </p>
+                </div>
+                <div class="trendingCard">
+                    <img src="assets/trending-2.jpg" alt="trending" />
+                    <h1>Train Tour Skyline</h1>
+                    <p>Adventure Journey | Group Tour</p>
+                    <div class="trendingDetails">
+                        <div class="price">
+                            <p>From</p>
+                            <h3>$500.50</h3>
+                            <p>*Price varies</p>
+                        </div>
+                        <div class="trendingRatings">
+                            <div>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-half-fill"></i></span>
+                                <span><i class="ri-star-line"></i></span>
+                            </div>
+                            <p>4.2 (25)</p>
+                        </div>
+                    </div>
+                    <h5>
+                        <span><i class="ri-time-line"></i></span> 3 days
+                    </h5>
+                    <p>
+                        <span><i class="ri-check-line"></i></span> Free Cancellation
+                    </p>
+                </div>
+                <div class="trendingCard">
+                    <img src="assets/trending-3.jpg" alt="trending" />
+                    <h1>Wild Forest Life</h1>
+                    <p>Scenic Beauty | Adrenaline Rush</p>
+                    <div class="trendingDetails">
+                        <div class="price">
+                            <p>From</p>
+                            <h3>$745.00</h3>
+                            <p>*Price varies</p>
+                        </div>
+                        <div class="trendingRatings">
+                            <div>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-half-fill"></i></span>
+                                <span><i class="ri-star-line"></i></span>
+                            </div>
+                            <p>4.5 (15)</p>
+                        </div>
+                    </div>
+                    <h5>
+                        <span><i class="ri-time-line"></i></span> 6 days
+                    </h5>
+                    <p>
+                        <span><i class="ri-check-line"></i></span> Free Cancellation
+                    </p>
+                </div>
+                <div class="trendingCard">
+                    <img src="assets/trending-4.jpg" alt="trending" />
+                    <h1>Desert Safari Adventure</h1>
+                    <p>Camel Ride | BBQ & Dinner</p>
+                    <div class="trendingDetails">
+                        <div class="price">
+                            <p>From</p>
+                            <h3>$390.50</h3>
+                            <p>*Price varies</p>
+                        </div>
+                        <div class="trendingRatings">
+                            <div>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-half-fill"></i></span>
+                                <span><i class="ri-star-line"></i></span>
+                            </div>
+                            <p>4.8 (30)</p>
+                        </div>
+                    </div>
+                    <h5>
+                        <span><i class="ri-time-line"></i></span> 7 days
+                    </h5>
+                    <p>
+                        <span><i class="ri-check-line"></i></span> Free Cancellation
+                    </p>
+                </div>
+
+                <div class="trendingCard">
+                    <img src="assets/trending-5.png" alt="trending" />
+                    <h1>Island Hopping Expedition</h1>
+                    <p>Cultural Immersion | Kayaking</p>
+                    <div class="trendingDetails">
+                        <div class="price">
+                            <p>From</p>
+                            <h3>$390.50</h3>
+                            <p>*Price varies</p>
+                        </div>
+                        <div class="trendingRatings">
+                            <div>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-half-fill"></i></span>
+                                <span><i class="ri-star-line"></i></span>
+                                <span><i class="ri-star-line"></i></span>
+                            </div>
+                            <p>3.9 (25)</p>
+                        </div>
+                    </div>
+                    <h5>
+                        <span><i class="ri-time-line"></i></span> 5 days
+                    </h5>
+                    <p>
+                        <span><i class="ri-check-line"></i></span> Free Cancellation
+                    </p>
+                </div>
+                <div class="trendingCard">
+                    <img src="assets/trending-6.png" alt="trending" />
+                    <h1>Rainforest Discovery Tour</h1>
+                    <p>Wildlife Observation | Unique Plants</p>
+                    <div class="trendingDetails">
+                        <div class="price">
+                            <p>From</p>
+                            <h3>$300.90</h3>
+                            <p>*Price varies</p>
+                        </div>
+                        <div class="trendingRatings">
+                            <div>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-half-fill"></i></span>
+                                <span><i class="ri-star-line"></i></span>
+                            </div>
+                            <p>4.9 (20)</p>
+                        </div>
+                    </div>
+                    <h5>
+                        <span><i class="ri-time-line"></i></span> 5 days
+                    </h5>
+                    <p>
+                        <span><i class="ri-check-line"></i></span> Free Cancellation
+                    </p>
+                </div>
+
             </div>
         </div>
-        <div class="trendingGrid">
-            <div class="trendingCard">
-                <img src="assets/trending-1.jpg" alt="trending" />
-                <h1>Mountain Hiking Tour</h1>
-                <p>Hiking Our | Stoke On Trent</p>
-                <div class="trendingDetails">
-                    <div class="price">
-                        <p>From</p>
-                        <h3>$957.50</h3>
-                        <p>*Price varies</p>
-                    </div>
-                    <div class="trendingRatings">
-                        <div>
-                            <span><i class="ri-star-fill"></i></span>
-                            <span><i class="ri-star-fill"></i></span>
-                            <span><i class="ri-star-fill"></i></span>
-                            <span><i class="ri-star-half-fill"></i></span>
-                            <span><i class="ri-star-line"></i></span>
-                        </div>
-                        <p>4.8 (10)</p>
-                    </div>
-                </div>
-                <h5>
-                    <span><i class="ri-time-line"></i></span> 7 days
-                </h5>
-                <p>
-                    <span><i class="ri-check-line"></i></span> Free Cancellation
-                </p>
-            </div>
-            <div class="trendingCard">
-                <img src="assets/trending-2.jpg" alt="trending" />
-                <h1>Train Tour Skyline</h1>
-                <p>Adventure Journey | Group Tour</p>
-                <div class="trendingDetails">
-                    <div class="price">
-                        <p>From</p>
-                        <h3>$500.50</h3>
-                        <p>*Price varies</p>
-                    </div>
-                    <div class="trendingRatings">
-                        <div>
-                            <span><i class="ri-star-fill"></i></span>
-                            <span><i class="ri-star-fill"></i></span>
-                            <span><i class="ri-star-fill"></i></span>
-                            <span><i class="ri-star-half-fill"></i></span>
-                            <span><i class="ri-star-line"></i></span>
-                        </div>
-                        <p>4.2 (25)</p>
-                    </div>
-                </div>
-                <h5>
-                    <span><i class="ri-time-line"></i></span> 3 days
-                </h5>
-                <p>
-                    <span><i class="ri-check-line"></i></span> Free Cancellation
-                </p>
-            </div>
-            <div class="trendingCard">
-                <img src="assets/trending-3.jpg" alt="trending" />
-                <h1>Wild Forest Life</h1>
-                <p>Scenic Beauty | Adrenaline Rush</p>
-                <div class="trendingDetails">
-                    <div class="price">
-                        <p>From</p>
-                        <h3>$745.00</h3>
-                        <p>*Price varies</p>
-                    </div>
-                    <div class="trendingRatings">
-                        <div>
-                            <span><i class="ri-star-fill"></i></span>
-                            <span><i class="ri-star-fill"></i></span>
-                            <span><i class="ri-star-fill"></i></span>
-                            <span><i class="ri-star-half-fill"></i></span>
-                            <span><i class="ri-star-line"></i></span>
-                        </div>
-                        <p>4.5 (15)</p>
-                    </div>
-                </div>
-                <h5>
-                    <span><i class="ri-time-line"></i></span> 6 days
-                </h5>
-                <p>
-                    <span><i class="ri-check-line"></i></span> Free Cancellation
-                </p>
-            </div>
-        </div>
+            
     </section>
 
     <section class="sectionContainer destinationContainer" id="destination">
@@ -372,7 +481,7 @@
             </div>
         </div>
     </section>
-   
+
 
     <section class="subscribe">
         <div class="sectionContainer subscribeContainer">
@@ -400,7 +509,7 @@
                 <a href="#subscribe">Write to Us</a>
                 <a href="#">Contact Us</a>
                 <a href="#">Privacy Policy</a>
-              </div>
+            </div>
             <div class="footerCol">
                 <h4>Follow Us</h4>
                 <div class="footerSocials">

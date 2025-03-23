@@ -33,6 +33,76 @@ ScrollReveal().reveal(".headerForm", {
     delay: 500,
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const priceFilter = document.getElementById("priceFilter");
+    const sortOptions = document.getElementById("sortOptions");
+    const tourCards = document.querySelectorAll(".trendingCard");
+    const tourContainer = document.querySelector(".trendingGrid");
+
+   // Get the existing "Clear Filters" button from the HTML
+const clearBtn = document.getElementById("clearBtn");
+
+    function filterAndSortTours() {
+        let filteredTours = Array.from(tourCards);
+
+        // Show loading effect
+        tourContainer.style.opacity = "0.5"; 
+        setTimeout(() => {
+            tourContainer.style.opacity = "1"; 
+        }, 300);
+
+        // Filtering by price
+        const priceValue = priceFilter.value;
+        filteredTours = filteredTours.filter(card => {
+            const price = parseFloat(card.querySelector(".price h3").textContent.replace("$", ""));
+            if (priceValue === "low") return price < 600;
+            if (priceValue === "mid") return price >= 600 && price <= 900;
+            if (priceValue === "high") return price > 900;
+            return true; 
+        });
+
+        // Sorting
+        const sortValue = sortOptions.value;
+        if (sortValue === "price-low") {
+            filteredTours.sort((a, b) => {
+                return parseFloat(a.querySelector(".price h3").textContent.replace("$", "")) - 
+                       parseFloat(b.querySelector(".price h3").textContent.replace("$", ""));
+            });
+        } else if (sortValue === "price-high") {
+            filteredTours.sort((a, b) => {
+                return parseFloat(b.querySelector(".price h3").textContent.replace("$", "")) - 
+                       parseFloat(a.querySelector(".price h3").textContent.replace("$", ""));
+            });
+        } else if (sortValue === "rating-high") {
+            filteredTours.sort((a, b) => {
+                return parseFloat(b.querySelector(".trendingRatings p").textContent.split(" ")[0]) - 
+                       parseFloat(a.querySelector(".trendingRatings p").textContent.split(" ")[0]);
+            });
+        }
+
+        // Updating the UI with animation
+        tourContainer.innerHTML = "";
+        filteredTours.forEach((card, index) => {
+            setTimeout(() => {
+                tourContainer.appendChild(card);
+                card.style.opacity = "1";
+                card.style.transform = "scale(1)";
+            }, index * 100); // Delay effect
+        });
+    }
+
+    // Add event listeners
+    priceFilter.addEventListener("change", filterAndSortTours);
+    sortOptions.addEventListener("change", filterAndSortTours);
+
+    // Clear Filters Function
+    clearBtn.addEventListener("click", () => {
+        priceFilter.value = "all";
+        sortOptions.value = "none";
+        filterAndSortTours();
+    });
+});
+
 // trending container
 ScrollReveal().reveal(".trendingCard", {
     ...scrollRevealOption,

@@ -196,12 +196,67 @@ nav {
   border: none;
   font-size: 0.9rem;
 }
+/* Styling for Filter & Sorting Section */
+.filter-sort-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels for Filters */
+.filter-sort-container label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Dropdown Select Boxes */
+.filter-sort-container select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Dropdown Hover & Focus Effects */
+.filter-sort-container select:hover,
+.filter-sort-container select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+#clearBtn{
+  padding: 12px 7px;
+  outline: none;
+  border: none;
+  font-size: 10px;
+  font-weight: 200;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#clearBtn:hover{
+  background-color: var(--primary-color-dark);
+  transition: background-color 0.3s ease-in-out;
+}
+
+
 
 .trendingGrid {
-  margin-top: 4rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 2rem;/* 3 cards per scroll, so 3 * 100% */
 }
 
 .trendingCard {
@@ -698,4 +753,11 @@ nav {
       display: none; /* Hide toggle on full screen */
     }
   }
-  
+  /* Responsive Adjustments */
+@media (max-width: 600px) {
+  .filter-sort-container {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+  }
+}
